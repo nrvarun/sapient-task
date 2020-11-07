@@ -18,6 +18,8 @@ const LaunchCard = ({
             <div className={style.imageWrapper}>
               <img
                 src={links.mission_patch}
+                width="180"
+                height="200"
                 alt={title}
                 className={style.image}
               />

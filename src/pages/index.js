@@ -9,10 +9,6 @@ import LaunchContent from "../components/Home/LaunchContent";
 import style from "../sass/layouts/home.module.scss";
 
 export default function Home({ data }) {
-  useEffect(() => {
-    console.log(data);
-  }, []);
-
   return (
     <Layout>
       <LaunchListContextProvider data={data}>

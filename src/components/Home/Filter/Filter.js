@@ -1,20 +1,27 @@
-import { uniq } from "lodash";
-import { useContext, useEffect, useState } from "react";
-import { LaunchListContext } from "../../Contexts/LaunchListContext";
+import { useState } from "react";
+
 import FilterContent from "../../global/FilterContent/FilterContent";
 import style from "./filter.module.scss";
 
 const Filter = () => {
-  const [years, setYears] = useState([]);
+  const [years] = useState([
+    "2006",
+    "2007",
+    "2008",
+    "2009",
+    "2010",
+    "2011",
+    "2012",
+    "2013",
+    "2014",
+    "2015",
+    "2016",
+    "2017",
+    "2018",
+    "2019",
+    "2020",
+  ]);
   const [launchStatuses] = useState(["true", "false"]);
-  const launches = useContext(LaunchListContext);
-
-  useEffect(() => {
-    const launchYears = launches.map((launch) => launch.launch_year);
-    const uniqLaunchYears = uniq(launchYears);
-    setYears(uniqLaunchYears);
-    console.log(uniqLaunchYears);
-  }, []);
 
   return (
     <aside className={style.sidebar}>
