@@ -9,7 +9,6 @@ const LaunchContent = () => {
 
   useEffect(() => {
     setLaunchData(data);
-    console.log(data);
   }, []);
 
   return (
@@ -31,7 +30,6 @@ const LaunchContent = () => {
               <LaunchCard
                 flightNumber={flight_number}
                 missionIds={mission_id}
-                image={"https://i.imgur.com/Ehe9AgY.png"}
                 title={mission_name}
                 links={links}
                 year={launch_year}

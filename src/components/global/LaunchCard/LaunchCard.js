@@ -1,6 +1,7 @@
 import style from "./launchcard.module.scss";
 
 import Link from "next/link";
+import Image from "next/image";
 
 const LaunchCard = ({
   links,
@@ -14,9 +15,10 @@ const LaunchCard = ({
     <article className={style.wrapper}>
       {links.mission_patch && (
         <Link href={links.wikipedia ? links.wikipedia : ""}>
-          <a target="_blank">
+          <a target="_blank" ref="noopener noreferrer">
             <div className={style.imageWrapper}>
-              <img
+              <Image
+                unoptimized
                 src={links.mission_patch}
                 width="180"
                 height="200"
