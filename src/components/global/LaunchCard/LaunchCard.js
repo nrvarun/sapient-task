@@ -15,7 +15,7 @@ const LaunchCard = ({
     <article className={style.wrapper}>
       {links.mission_patch && (
         <Link href={links.wikipedia ? links.wikipedia : ""}>
-          <a target="_blank" ref="noopener noreferrer">
+          <a target="_blank" rel="noopener noreferrer">
             <div className={style.imageWrapper}>
               <Image
                 unoptimized
@@ -30,7 +30,7 @@ const LaunchCard = ({
         </Link>
       )}
       <Link href={links.wikipedia ? links.wikipedia : ""}>
-        <a target="_blank">
+        <a target="_blank" rel="noopener noreferrer">
           <h2
             className={`${style.title} text-blue fnt-700`}
           >{`${title} #${flightNumber}`}</h2>
