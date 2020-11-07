@@ -1,46 +1,53 @@
-import { useContext, useEffect, useState } from "react";
+import { memo, useContext, useState } from "react";
 import { LaunchListContext } from "../../Contexts/LaunchListContext";
+import EmptyState from "../../global/EmptyState";
 import LaunchCard from "../../global/LaunchCard/LaunchCard";
+import Loader from "../../global/Loader";
 import style from "./launchcontent.module.scss";
 
 const LaunchContent = () => {
-  const [launchData, setLaunchData] = useState([]);
-  const data = useContext(LaunchListContext);
-
-  useEffect(() => {
-    setLaunchData(data);
-  }, []);
+  const [programsData] = useContext(LaunchListContext);
 
   return (
     <section className={style.wrapper}>
-      <ul className={style.list}>
-        {launchData.map(
-          (
-            {
-              links,
-              mission_name,
-              mission_id,
-              flight_number,
-              launch_year,
-              launch_success,
-            },
-            index
-          ) => (
-            <li key={index} className={style.listItem}>
-              <LaunchCard
-                flightNumber={flight_number}
-                missionIds={mission_id}
-                title={mission_name}
-                links={links}
-                year={launch_year}
-                launchSuccessStatus={launch_success}
-              />
-            </li>
-          )
-        )}
-      </ul>
+      {!programsData.isAPILoading ? (
+        <>
+          {programsData.programs.length > 0 ? (
+            <ul className={style.list}>
+              {programsData.programs.map(
+                (
+                  {
+                    links,
+                    mission_name,
+                    mission_id,
+                    flight_number,
+                    launch_year,
+                    launch_success,
+                  },
+                  index
+                ) => (
+                  <li key={index} className={style.listItem}>
+                    <LaunchCard
+                      flightNumber={flight_number}
+                      missionIds={mission_id}
+                      title={mission_name}
+                      links={links}
+                      year={launch_year}
+                      launchSuccessStatus={launch_success}
+                    />
+                  </li>
+                )
+              )}
+            </ul>
+          ) : (
+            <EmptyState />
+          )}
+        </>
+      ) : (
+        <Loader />
+      )}
     </section>
   );
 };
 
-export default LaunchContent;
+export default memo(LaunchContent);

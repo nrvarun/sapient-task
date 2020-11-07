@@ -70,4 +70,4 @@ const LaunchCard = ({
   );
 };
 
-export default memo(LaunchCard);
+export default LaunchCard;

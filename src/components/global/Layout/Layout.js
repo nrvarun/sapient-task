@@ -8,7 +8,11 @@ const Layout = ({ children }) => {
       <Head>
         <title>SpaceX</title>
         <link rel="icon" href="/favicon.ico" />
-        <meta name="description" content="a spacex data feed app" />
+        <meta charSet="UTF-8" />
+        <meta name="description" content="SpaceX Lauch programs" />
+        <meta name="keywords" content="spacex, missile, programs" />
+        <meta name="author" content="Varun Narecode Radhakrishnan" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link
           href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
           rel="stylesheet"

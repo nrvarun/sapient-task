@@ -1,6 +1,8 @@
 import style from "./filterbox.module.scss";
 
-const FilterBox = ({ title, value, type }) => {
+const FilterBox = ({ title, value, type, setFilter }) => {
+  const handleChange = (e) => setFilter(e);
+
   return (
     <label
       htmlFor={`${title.replace(" ", "")}${value}`}
@@ -8,6 +10,10 @@ const FilterBox = ({ title, value, type }) => {
       className={style.label}
     >
       <input
+        onChange={handleChange}
+        aria-checked={"false"}
+        value={value}
+        role="radio"
         type={type}
         name={title.replace(" ", "")}
         id={`${title.replace(" ", "")}${value}`}

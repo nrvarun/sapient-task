@@ -1,0 +1,28 @@
+.wrapper {
+  display: flex;
+  min-height: 250px;
+
+  @media (min-width: 767px) {
+    min-height: 400px;
+  }
+
+  @media (min-width: 1024px) {
+    min-height: 450px;
+  }
+
+  .content {
+    margin: auto;
+    text-align: center;
+
+    p {
+      font-weight: 400;
+      font-size: 18px;
+    }
+  }
+}
+
+.illustration {
+  width: 180px;
+  height: 70px;
+  margin: 0 0 20px 0;
+}
