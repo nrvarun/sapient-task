@@ -2,6 +2,7 @@ import style from "./launchcard.module.scss";
 
 import Link from "next/link";
 import Image from "next/image";
+import { memo } from "react";
 
 const LaunchCard = ({
   links,
@@ -69,4 +70,4 @@ const LaunchCard = ({
   );
 };
 
-export default LaunchCard;
+export default memo(LaunchCard);
