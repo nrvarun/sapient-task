@@ -1,4 +1,10 @@
-This is SpaceX API, a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is SpaceX API Feed app, a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+## Tech Stack used:
+
+1. ReactJS
+2. NextJS SSR Boilerplate
+3. SASS
 
 ## Getting Started
 
@@ -28,3 +34,7 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+##Lighthouse Performance
+
+![alt text](./public/SpaceX-Performance.png "Logo Title Text 1")
