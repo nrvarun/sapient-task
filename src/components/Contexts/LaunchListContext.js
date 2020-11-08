@@ -1,11 +1,12 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const LaunchListContext = createContext(null);
 
 export const LaunchListContextProvider = ({ children, data }) => {
   const [programsData, setPrograms] = useState({
-    programs: [...data],
+    programs: [...data.programs],
     isAPILoading: false,
+    filter: { ...data.query },
   });
 
   return (

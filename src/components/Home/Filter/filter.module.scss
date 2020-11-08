@@ -1,5 +1,6 @@
 .sidebar {
   width: 100%;
+  position: relative;
 
   @media (min-width: 700px) {
     flex: 0 0 250px;
@@ -34,5 +35,29 @@
 
   @media (min-width: 1024px) {
     font-size: 25px;
+  }
+}
+
+.clearFilter {
+  position: absolute;
+  top: 25px;
+  right: 15px;
+  background-color: transparent;
+  border: none;
+  font-size: 14px;
+  font-weight: 700;
+  color: #f44336;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+
+  @media (min-width: 700px) {
+    right: 25px;
+  }
+
+  img {
+    width: 20px;
+    height: 20px;
+    margin: -4px 0 0 0;
   }
 }

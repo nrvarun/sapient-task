@@ -7,10 +7,10 @@ import LaunchContent from "../components/Home/LaunchContent";
 
 import style from "../sass/layouts/home.module.scss";
 
-export default function Home({ data }) {
+export default function Home({ programs, query }) {
   return (
     <Layout>
-      <LaunchListContextProvider data={data}>
+      <LaunchListContextProvider data={{ programs, query }}>
         <section className={style.wrapper}>
           <Filter />
           <LaunchContent />
@@ -21,11 +21,21 @@ export default function Home({ data }) {
 }
 
 // This gets called on every request
-export async function getServerSideProps() {
+export async function getServerSideProps(context) {
+  const hasQuery = Object.keys(context.query).length;
+  const routeParams = context.resolvedUrl.replace("/", "");
+
+  let query = `?limit=${API.limit}`;
+
+  if (hasQuery) {
+    console.log(context);
+    query = `${query}&${routeParams}`;
+  }
+
   // Fetch data from external API
-  const res = await fetch(`${API.host}/launches?limit=${API.limit}`);
-  const data = await res.json();
+  const pgmRes = await fetch(`${API.host}/launches${query}`);
+  const pgmData = await pgmRes.json();
 
   // Pass data to the page via props
-  return { props: { data } };
+  return { props: { programs: pgmData, query: context.query } };
 }
