@@ -18,7 +18,8 @@ const LaunchCard = ({
         <Link href={links.wikipedia ? links.wikipedia : ""}>
           <a target="_blank" rel="noopener noreferrer">
             <figure className={style.imageWrapper}>
-              <img
+              <Image
+                unoptimized
                 src={links.mission_patch}
                 width="180"
                 height="200"
