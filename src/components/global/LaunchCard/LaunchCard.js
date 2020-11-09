@@ -11,7 +11,7 @@ const LaunchCard = ({
   flightNumber,
   year,
   launchSuccessStatus,
-  landingStatus
+  landingStatus,
 }) => {
   return (
     <article className={style.wrapper}>
@@ -65,7 +65,7 @@ const LaunchCard = ({
       <div className={style.detailItem}>
         <p className={style.detailTitle}>successful landing:</p>
         <p className={`${style.detailValue} fnt-400 text-blue text-capitalize`}>
-          {`${landingStatus ? landingStatus : 'N/A'}`}
+          {`${landingStatus ? "Yes" : "No"}`}
         </p>
       </div>
     </article>
