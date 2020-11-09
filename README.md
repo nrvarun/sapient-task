@@ -6,7 +6,7 @@ This is SpaceX API Feed app, a [Next.js](https://nextjs.org/) project bootstrapp
 2. NextJS SSR Boilerplate
 3. SASS
 
-## Getting Started
+## Getting Started :
 
 First, run the development server:
 
