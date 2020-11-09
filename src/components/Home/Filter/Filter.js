@@ -100,8 +100,6 @@ const Filter = () => {
       isFilterApplied,
     } = filterState;
 
-    console.log("filterState changed");
-
     let query = BASE_URL;
 
     if (filterLaunchStatus !== null) {
@@ -136,7 +134,6 @@ const Filter = () => {
   }, [filterState]);
 
   const clearFilters = () => {
-    console.log("lets clear filters");
     router.push("/", { shallow: true });
 
     setFilter({
@@ -177,13 +174,15 @@ const Filter = () => {
         )}
         <h2 className={style.heading}>filters</h2>
         <FilterContent
-          title="launch year"
+          heading={"launch year"}
+          title="launchyear"
           data={YEARS}
           filterType="radio"
           selectedValue={filterState.filterYear}
           handleFilterChange={handleFilter}
         />
         <FilterContent
+          heading={"successful launch"}
           title="launchstatus"
           data={LAUNCH_STATUSES}
           filterType="radio"
@@ -191,6 +190,7 @@ const Filter = () => {
           handleFilterChange={handleFilter}
         />
         <FilterContent
+          heading={"successful landing"}
           title="landingstatus"
           data={LANDING_STATUSES}
           filterType="radio"

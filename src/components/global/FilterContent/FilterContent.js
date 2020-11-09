@@ -7,6 +7,7 @@ const FilterContent = ({
   filterType = "",
   handleFilterChange,
   selectedValue,
+  heading,
 }) => {
   const handleFilter = (e) => {
     const { name, value } = e.target;
@@ -16,9 +17,7 @@ const FilterContent = ({
 
   return (
     <div className={style.wrapper}>
-      <p className={style.title} id={title.replace(" ", "")}>
-        {title}
-      </p>
+      <p className={style.title}>{heading}</p>
       <RadioGroup classList={style.list} activeItem={selectedValue}>
         {data.map((item, index) => (
           <li key={index}>
