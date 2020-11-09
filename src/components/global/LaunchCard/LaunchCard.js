@@ -59,13 +59,13 @@ const LaunchCard = ({
       <div className={style.detailItem}>
         <p className={style.detailTitle}>successful launch:</p>
         <p className={`${style.detailValue} fnt-400 text-blue text-capitalize`}>
-          {`${launchSuccessStatus ? "Yes" : "No"}`}
+          {`${launchSuccessStatus ? "true" : "false"}`}
         </p>
       </div>
       <div className={style.detailItem}>
         <p className={style.detailTitle}>successful landing:</p>
         <p className={`${style.detailValue} fnt-400 text-blue text-capitalize`}>
-          {`${landingStatus ? "Yes" : "No"}`}
+          {`${landingStatus ? "true" : "false"}`}
         </p>
       </div>
     </article>
