@@ -56,18 +56,26 @@ const LaunchCard = ({
           {year}
         </p>
       </div>
-      <div className={style.detailItem}>
-        <p className={style.detailTitle}>successful launch:</p>
-        <p className={`${style.detailValue} fnt-400 text-blue text-capitalize`}>
-          {`${launchSuccessStatus ? "true" : "false"}`}
-        </p>
-      </div>
-      <div className={style.detailItem}>
-        <p className={style.detailTitle}>successful landing:</p>
-        <p className={`${style.detailValue} fnt-400 text-blue text-capitalize`}>
-          {`${landingStatus ? "true" : "false"}`}
-        </p>
-      </div>
+      {launchSuccessStatus !== null && (
+        <div className={style.detailItem}>
+          <p className={style.detailTitle}>successful launch:</p>
+          <p
+            className={`${style.detailValue} fnt-400 text-blue text-capitalize`}
+          >
+            {`${launchSuccessStatus ? "true" : "false"}`}
+          </p>
+        </div>
+      )}
+      {landingStatus !== null && (
+        <div className={style.detailItem}>
+          <p className={style.detailTitle}>successful landing:</p>
+          <p
+            className={`${style.detailValue} fnt-400 text-blue text-capitalize`}
+          >
+            {`${landingStatus ? "true" : "false"}`}
+          </p>
+        </div>
+      )}
     </article>
   );
 };
