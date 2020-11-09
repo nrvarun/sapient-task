@@ -7,7 +7,7 @@ const Header = () => {
     <header>
       <div className={style.content}>
         <Link href="/" as="/">
-          <a>
+          <a style={{display: 'inline-block'}}>
             <h1
               data-test-id="logo"
               className={`fnt-700 text-capitalize ${style.title}`}

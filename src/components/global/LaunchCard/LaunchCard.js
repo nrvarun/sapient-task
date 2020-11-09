@@ -11,6 +11,7 @@ const LaunchCard = ({
   flightNumber,
   year,
   launchSuccessStatus,
+  landingStatus
 }) => {
   return (
     <article className={style.wrapper}>
@@ -20,7 +21,7 @@ const LaunchCard = ({
             <figure className={style.imageWrapper}>
               <Image
                 unoptimized
-                src={links.mission_patch}
+                src={links.mission_patch_small}
                 width="180"
                 height="200"
                 alt={title}
@@ -64,7 +65,7 @@ const LaunchCard = ({
       <div className={style.detailItem}>
         <p className={style.detailTitle}>successful landing:</p>
         <p className={`${style.detailValue} fnt-400 text-blue text-capitalize`}>
-          {"N/A"}
+          {`${landingStatus ? landingStatus : 'N/A'}`}
         </p>
       </div>
     </article>
